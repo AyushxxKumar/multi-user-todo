@@ -1,10 +1,13 @@
 import { supabase } from "../supabaseClient";
 import { useState } from "react";
 
+//const withub=[""]
+
 const Auth = () => {
   const [error, setError] = useState();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [Name, setName] = useState("");
 
   const handleAuth = async ({ isLogin }) => {
     const { error, data, session, user } =
@@ -18,11 +21,20 @@ const Auth = () => {
     console.log(error, data, session, user)
   }
 
+
   return (
     <div className="Login-card">
-      <h2>Sign In</h2>
+      <h2 className="ayush">Sign In</h2>
       <div className="Form-container">
         <form className="">
+        <TextFormField
+            label="Name"
+            inputType="Name"
+            inputName="userName"
+            value={Name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Your name"
+          />
           <TextFormField
             label="Email"
             inputType="email"

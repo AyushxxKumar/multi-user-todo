@@ -28,7 +28,7 @@ const Todos = () => {
         }}>Logout</button>
       </nav>
       <div className="App-header">
-        <h2><FcTodoList style={{ position: "relative", top: "0.5rem", paddingRight: "0.25rem" }} />Todos</h2>
+        <h2><FcTodoList style={{ position: "relative", top: "0.5rem", paddingRight: "0.25rem" }} />FTodos</h2>
         <span>{count} remaining</span>
       </div>
       <AddTodo setTodos={selectTodos} />
@@ -62,7 +62,7 @@ const AddTodo = ({ setTodos }) => {
     <form className="Input-container">
       <input
         className="Input-field App-border-radius"
-        placeholder="Add task"
+        placeholder="Add task+name the person to assign task"
         type="text"
         value={task}
         onChange={(e) => setTask(e.target.value)}
